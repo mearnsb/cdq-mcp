@@ -293,7 +293,7 @@ def run_dq_job(dataset: str, run_id: str, sql: str) -> str:
         "runId": run_id,
         "pushdown": {"sourceQuery": sql, "connectionName": cxn},
         "agentId": {"id": 0},
-        "profile": {"on": False}
+        "profile": {"on": True} #TODO: set to False for simple onboarding, minimizing processing time.
     }
     
     reg_result = call_api('PUT', '/v3/datasetDefs', json=data)
