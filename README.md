@@ -191,8 +191,13 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
 }
 ```
 
+## SQL Interactions
+
+SQL interactions use the native SQL dialect of the configured connection. This is optimal when used with a **pushdown** connection type, where queries are executed directly on the data source rather than pulling data into the DQ engine.
+
 ## Known Limitations
 
+- Adaptations may be needed and code may vary depending on your use case and instance configuration
 - To be used for portable/personal MCP interactions
 - Currently supports 1 Connection at time(cxn)
 - Rule types are limited to Freeform (SQLF)
