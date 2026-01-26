@@ -146,6 +146,51 @@ curl -s http://localhost:8765/mcp \
 # Should return: {"jsonrpc":"2.0",...,"message":"Bad Request: Missing session ID"}
 ```
 
+## MCP Client Configuration
+
+### Cursor
+
+Add to `~/.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "cdq-mcp": {
+      "url": "http://localhost:8765/mcp",
+      "name": "Collibra Data Quality MCP"
+    }
+  }
+}
+```
+
+### Claude CLI
+
+Add to `~/.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "cdq-mcp": {
+      "url": "http://localhost:8765/mcp"
+    }
+  }
+}
+```
+
+### Claude Desktop
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
+
+```json
+{
+  "mcpServers": {
+    "cdq-mcp": {
+      "url": "http://localhost:8765/mcp"
+    }
+  }
+}
+```
+
 ## Known Limitations
 
 - To be used for portable/personal MCP interactions
