@@ -20,6 +20,10 @@ credentials.json
 # AI assistants
 .gemini/
 .claude/
+.geminiignore
+.cursorignore
+.dockerignore
+.gitignore
 
 # Large/binary files
 *.log

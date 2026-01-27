@@ -24,6 +24,10 @@ credentials.json
 # AI assistants
 .gemini/
 .claude/
+.geminiignore
+.cursorignore
+.dockerignore
+.gitignore
 
 # IDE & editor
 .idea/

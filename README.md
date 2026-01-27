@@ -1,6 +1,6 @@
 # cdq-mcp
 
-Minimal MCP server with HTTP transport using FastMCP.
+Lightweight MCP server with HTTP transport using FastMCP. Run SQL, add rules, and creating DQ jobs (100% REST API). 
 
 ## Setup
 
