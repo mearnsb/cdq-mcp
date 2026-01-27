@@ -2,6 +2,22 @@
 
 Lightweight MCP server with HTTP transport using FastMCP. Run SQL, add rules, and creating DQ jobs (100% REST API). 
 
+## Tools 
+| Tool                   | Inputs                                              | Description                                 |
+|------------------------|----------------------------------------------------|---------------------------------------------|
+| run_dq_job             | dataset (str), run_id (str), sql (str)             | Register a dataset and run a DQ job         |
+| get_recent_runs        | none                                               | Get recent DQ job runs                      |
+| get_jobs_in_queue      | limit (int, default 10), status (str)              | Get jobs currently in queue                 |
+| get_hoot_results       | dataset (str), run_id (str)                        | Get DQ results for a specific run           |
+| run_sql                | sql (str)                                          | Execute a SQL query                         |
+| search_catalog         | search_string (str), limit (int, default 50)       | Search datasets in catalog                  |
+| get_rules_by_dataset   | dataset (str)                                      | Get DQ rules for a dataset                  |
+| save_rule              | dataset, rule_name, rule_sql, points (1), perc (1) | Create a new DQ rule                        |
+| get_dataset_definition | dataset (str)                                      | Get dataset configuration                   |
+| get_alerts             | dataset (str)                                      | Get alerts for a dataset                    |
+| save_alert             | dataset, alert_name, condition, email, message     | Create an alert                             |
+| get_todays_date        | none                                               | Get today's date (for run IDs)              |
+
 ## Setup
 
 Create a `.env` file with your Collibra DQ credentials:
