@@ -250,8 +250,10 @@ SQL interactions use the native SQL dialect of the configured connection. This i
 
 - Adaptations may be needed and code may vary depending on your use case and instance configuration
 - To be used for portable/personal MCP interactions
+- This is an unofficial reference server
 - Currently supports 1 Connection at time(cxn)
 - Rule types are limited to Freeform (SQLF)
 - Rules are saved as 'Absolute' scoring (not percentage/threshold)
 - SQL Queries will run same limit as Web config
 - Intended as a reference framework for *Classic* CDQ
+
