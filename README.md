@@ -2,6 +2,7 @@
 
 Lightweight MCP server with HTTP transport using FastMCP. Run SQL, add rules, and creating DQ jobs (100% REST API). 
 
+
 ## Tools 
 | Tool                   | Inputs                                              | Description                                 |
 |------------------------|----------------------------------------------------|---------------------------------------------|
@@ -17,6 +18,21 @@ Lightweight MCP server with HTTP transport using FastMCP. Run SQL, add rules, an
 | get_alerts             | dataset (str)                                      | Get alerts for a dataset                    |
 | save_alert             | dataset, alert_name, condition, email, message     | Create an alert                             |
 | get_todays_date        | none                                               | Get today's date (for run IDs)              |
+
+## Example Usage 
+
+#### CLI (Gemini, Claude)
+![CLI](assets/images/cli.png)
+
+#### OpenAI (via tunnel)
+![OpenAI](assets/images/openai.png)
+
+#### IDE (Cursor, Windsurf)
+![IDE](assets/images/ide.png)
+
+#### Private Models
+![Private LLM](assets/images/local-llm.png)
+
 
 ## Setup
 
@@ -102,14 +118,24 @@ docker run -d --name cdq-mcp -p 8765:8765 --env-file .env cdq-mcp
 docker stop cdq-mcp && docker rm cdq-mcp
 ```
 
-## Adding Tools
+## Pre-Built Container (2026-01-28)
+```bash
+docker pull brianmearns162/cdq-mcp:latest
 
-```python
-@mcp.tool()
-def my_tool(param: str) -> str:
-    """Tool description"""
-    return f"Result: {param}"
+docker run --rm -p 8765:8765 --env-file .env brianmearns162/cdq-mcp:latest
 ```
+
+
+## Testing with Inspector (Suggested)
+
+Use the MCP inspector to interact with the tools and inspect the inputs and outputs.
+
+```bash
+npx @modelcontextprotocol/inspector
+```
+
+![Inspector](assets/images/inspector.png)
+
 
 ## Testing with curl
 
@@ -205,6 +231,15 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
     }
   }
 }
+```
+
+## Adding Tools
+
+```python
+@mcp.tool()
+def my_tool(param: str) -> str:
+    """Tool description"""
+    return f"Result: {param}"
 ```
 
 ## SQL Interactions
